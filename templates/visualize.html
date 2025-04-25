@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模型性能可视化 - 钓鱼邮件检测</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #2e3b4e;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .metrics-box {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 20px 0 40px 0;
+        }
+
+        .metric {
+            width: 200px;
+            text-align: center;
+            margin: 10px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            background-color: #f8f9fa;
+        }
+
+        .metric-name {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2e3b4e;
+        }
+
+        .charts-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .chart-box {
+            width: 45%;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .chart-image {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .full-width-chart {
+            width: 90%;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 1.1rem;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 20px 0;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .buttons-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid #2e3b4e;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.9rem;
+            padding: 15px;
+            background-color: #2e3b4e;
+            color: white;
+            margin-top: 30px;
+        }
+
+        #loading {
+            display: none;
+            text-align: center;
+            margin: 20px;
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border-left-color: #4CAF50;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>钓鱼邮件检测 - 模型性能可视化</h1>
+</header>
+
+<div class="container">
+    <div class="info-box">
+        这个页面展示了钓鱼邮件检测模型的性能指标和训练过程的可视化结果。通过这些图表，您可以了解模型的准确率、精确率、召回率等关键指标，以及模型训练过程中损失函数和准确率的变化趋势。
+    </div>
+
+    <h2>模型性能指标</h2>
+    <div class="metrics-box">
+        <div class="metric">
+            <div class="metric-name">准确率 (Accuracy)</div>
+            <div class="metric-value">{{ metrics.accuracy|default(0)|round(4) }}</div>
+        </div>
+        <div class="metric">
+            <div class="metric-name">精确率 (Precision)</div>
+            <div class="metric-value">{{ metrics.precision|default(0)|round(4) }}</div>
+        </div>
+        <div class="metric">
+            <div class="metric-name">召回率 (Recall)</div>
+            <div class="metric-value">{{ metrics.recall|default(0)|round(4) }}</div>
+        </div>
+        <div class="metric">
+            <div class="metric-name">F1得分</div>
+            <div class="metric-value">{{ metrics.f1_score|default(0)|round(4) }}</div>
+        </div>
+    </div>
+
+    <h2>混淆矩阵</h2>
+    <div class="full-width-chart">
+        <img src="{{ url_for('static', filename='confusion_matrix.png') }}" alt="混淆矩阵" class="chart-image">
+    </div>
+
+    <h2>训练过程</h2>
+    <div class="charts-container">
+        <div class="chart-box">
+            <h3>损失函数变化</h3>
+            <img src="{{ url_for('static', filename='loss_curve.png') }}" alt="损失曲线" class="chart-image">
+        </div>
+        <div class="chart-box">
+            <h3>准确率变化</h3>
+            <img src="{{ url_for('static', filename='accuracy_curve.png') }}" alt="准确率曲线" class="chart-image">
+        </div>
+    </div>
+
+    <h2>ROC曲线与PR曲线</h2>
+    <div class="charts-container">
+        <div class="chart-box">
+            <h3>ROC曲线</h3>
+            <img src="{{ url_for('static', filename='roc_curve.png') }}" alt="ROC曲线" class="chart-image">
+        </div>
+        <div class="chart-box">
+            <h3>精确率-召回率曲线</h3>
+            <img src="{{ url_for('static', filename='pr_curve.png') }}" alt="PR曲线" class="chart-image">
+        </div>
+    </div>
+
+    <h2>性能指标对比</h2>
+    <div class="full-width-chart">
+        <img src="{{ url_for('static', filename='metrics_bar.png') }}" alt="性能指标条形图" class="chart-image">
+    </div>
+
+    <div class="buttons-container">
+        <button onclick="location.href='/'">返回首页</button>
+        <button onclick="retrainModel()">重新训练模型</button>
+        <div id="loading">
+            <div class="spinner"></div> 正在重新训练模型，这可能需要几分钟时间...
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 钓鱼邮件检测系统. 保留所有权利.</p>
+</footer>
+
+<script>
+function retrainModel() {
+    // 显示加载动画
+    document.getElementById('loading').style.display = 'block';
+    
+    // 发送重新训练请求
+    fetch('/retrain', {
+        method: 'POST',
+    })
+    .then(response => response.json())
+    .then(data => {
+        // 隐藏加载动画
+        document.getElementById('loading').style.display = 'none';
+        
+        if(data.status === 'success') {
+            alert('模型重新训练成功!');
+            // 刷新页面以显示新的结果
+            location.reload();
+        } else {
+            alert('训练失败: ' + data.message);
+        }
+    })
+    .catch(error => {
+        document.getElementById('loading').style.display = 'none';
+        alert('发生错误: ' + error);
+    });
+}
+</script>
+
+</body>
+</html>

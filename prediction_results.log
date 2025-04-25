@@ -1,0 +1,103 @@
+[2025-04-15 09:46:02] 预测结果: Phishing (概率: 0.5174)
+邮件内容:
+
+--------------------------------------------------------------------------------
+
+[2025-04-15 09:46:09] 预测结果: Not Phishing (概率: 0.0024)
+邮件内容:
+1.结算单
+附件为腾讯微信广告流量主结算单，如有疑问，请关注公众号“微信广告助手（微信id：ad_helper）”，在会话窗口留言，在线客服会及时为你解答（咨询时间：工作日09：00-18：00）。
+
+2.开票信息
+2.1 对私：无需开票，等待腾讯公司打款即可
+2.2 对公：请按结算单总额开具增值税专用发票，邮寄信息和开票信息请见结算单条码内容页，发票寄送请按照如下指引操作：
+
+2.2.1电子发票
+为了提升付款效率，响应国家全面推进税收征管数字化升级和智能化改造的要求，若贵司可开具数字化电子发票，请参考https://docs.qq.com/doc/DUGp1cEFsVmtmdEVL ;所示步骤上传电子发票。
+--------------------------------------------------------------------------------
+
+[2025-04-15 09:46:39] 预测结果: Phishing (概率: 0.5174)
+邮件内容:
+
+--------------------------------------------------------------------------------
+
+[2025-04-15 09:47:58] 预测结果: Phishing (概率: 0.5174)
+邮件内容:
+
+--------------------------------------------------------------------------------
+
+[2025-04-15 09:49:11] 预测结果: Phishing (概率: 0.8454)
+邮件内容:
+# 添加自定义过滤器
+@app.template_filter('nl2br')
+def nl2br_filter(s):
+    if s is None:
+        return ""
+    return s.replace('\n', '<br>')
+--------------------------------------------------------------------------------
+
+[2025-04-15 09:49:41] 预测结果: Phishing (概率: 0.8454)
+邮件内容:
+# 添加自定义过滤器
+@app.template_filter('nl2br')
+def nl2br_filter(s):
+    if s is None:
+        return ""
+    return s.replace('\n', '<br>')
+--------------------------------------------------------------------------------
+
+[2025-04-15 09:50:32] 预测结果: Not Phishing (概率: 0.0197)
+邮件内容:
+尊敬的同学，您好：
+    由于近期学校毕设管理系统版本升级，为了确保您的毕业设计文档顺利提交并进行查重，请您于 2025年6月5日 23:59 前，登录最新的毕业设计提交系统，完成以下操作：
+    1.确认个人信息：核对您的姓名、学号、专业及联系方式。
+    2.上传毕设初稿：提交论文的 PDF 版本及相关材料（如开题报告、任务书等）。
+    3.更新密码：出于安全考虑，系统将要求您重新设置提交密码，以防资料泄露。
+登录链接：
+https://co2.cnki.net/Login.html?dp=gliet&r=1590133053587&cas=1
+（请务必通过以上链接访问，否则可能无法正常提交）
+如未在规定时间内完成提交，可能导致毕设进度延误或无法参加后续答辩评审。请大家务必重视，尽快完成操作。
+若有任何疑问，请及时联系教务处毕设管理办公室（电话：000-1234-5678），或发送邮件至jwchu@guet.edu.cn咨询。
+感谢您的配合！
+教务处毕设管理办公室
+2025年3月25日
+--------------------------------------------------------------------------------
+
+[2025-04-15 09:53:21] 预测结果: Phishing (概率: 1.0000)
+邮件内容:
+"From johnokele@truthmail.com Wed Sep 11 14:10:20 2002 Return-Path: <johnokele@truthmail.com> Delivered-To: zzzz@localhost.spamassassin.taint.org Received: from localhost (jalapeno [127.0.0.1]) by zzzzason.org (Postfix) with ESMTP id 7A7C216F03 for <zzzz@localhost>; Wed, 11 Sep 2002 14:10:19 +0100 (IST) Received: from jalapeno [127.0.0.1] by localhost with IMAP (fetchmail-5.9.0) for zzzz@localhost (single-drop); Wed, 11 Sep 2002 14:10:19 +0100 (IST) Received: from ab97c1098.com (66-178-46-19.reverse.newskies.net [66.178.46.19]) by dogma.slashnull.org (8.11.6/8.11.6) with SMTP id g8BCkkC15128 for <zzzz@jmason.org>; Wed, 11 Sep 2002 13:46:49 +0100 Message-Id: <200209111246.g8BCkkC15128@dogma.slashnull.org> From: ""CAPT. JOHN OKELE"" <johnokele@truthmail.com> Reply-To: johnokele@truthmail.com To: zzzz@spamassassin.taint.org Date: Thu, 12 Sep 2002 13:44:17 -0700 Subject: **urgent assistance** X-Mailer: Microsoft Outlook Express 5.00.2919.6900 DM MIME-Version: 1.0 Content-Type: text/plain; charset=""us-ascii"" X-MIME-Autoconverted: from quoted-printable to 8bit by dogma.slashnull.org id g8BCkkC15128 Content-Transfer-Encoding: 8bit 5, Meridian East Leicester LE3 2WZ Leicester City, United Kingdom Tel/Fax: 44-870-136-7079 Date: 09/11/2002 FROM: CAPT JOHN OKELE DEAR SIR, I got your contact through a Military friend who I did training with in your country, I am Captain JOHN OKELE the former Commander of the Security Guards of the late Laurent Kabila (former President, Democratic Republic of Congo (Africa), I am presently in self-exile with my wife and one child in remote Leicester City Britain, due to threat of the present Government headed by the son of Late Laurent Kabila after my life and my family to kill, saying that I know about the death of his father. I assisted Late President Laurent Kabila to keep US$35M (Thirty Five Millions) in a Security company during the War in My Country. Although the security company does not know the content in the boxes deposited as we deposit it as personal effects of Mr. Laurent Kabila. It is in this respect that I seek your help to assist me in the investment of these funds before the present Government headed by the son will have knowledge of this money to avoid being taking away. On conclusion of this business, I shall compensate you with 45% of the fund, while 5% is mapped out for any expense we should encounter during the cause of transaction, and the remaining amount should be used to open account for my family for investment over there with your assistance. I need a profitable long-term investment plan with your company or you. Your terms, suggestions and ideas are required urgently. Expecting your prompt response. Also furnish me with your current E-mail address, Tel/Fax Numbers (Private) for a personal contact with you. NOTE: Please you can call or fax to the line above, it belong to my cousin, as he know the confidentiality, you can reach me direct on my mail above. Yours Faithfully, Capt JOHN OKELE E-mail: johnokele2@hotmail.com Private E-mail: johnokele@london.com"
+--------------------------------------------------------------------------------
+
+[2025-04-15 10:06:21] 预测结果: Phishing (概率: 0.5174)
+邮件内容:
+
+--------------------------------------------------------------------------------
+
+[2025-04-15 10:11:27] 预测结果: Phishing (概率: 0.5174)
+邮件内容:
+阿四大
+--------------------------------------------------------------------------------
+
+[2025-04-15 10:28:53] 预测结果: Phishing (概率: 0.5174)
+邮件内容:
+    a. 镜像及chart私有化
+    b. chart的功能定制化配置: sso, 日志归档到oss, 历史执行记录归档到mysql, nas持久化, harbor仓库
+    c. 集成到helm-chart-deploy自动部署
+    d. 运维文档编写
+--------------------------------------------------------------------------------
+
+[2025-04-15 10:35:40] 预测结果: Phishing (概率: 0.5174)
+邮件内容:
+
+--------------------------------------------------------------------------------
+
+[2025-04-15 10:55:08] 预测结果: Phishing (概率: 0.5059)
+邮件内容:
+请我去啊是
+--------------------------------------------------------------------------------
+
+[2025-04-15 10:56:46] 预测结果: Phishing (概率: 0.5059)
+邮件内容:
+请求大发疯
+--------------------------------------------------------------------------------
+
